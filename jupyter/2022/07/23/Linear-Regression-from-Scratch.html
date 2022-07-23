@@ -87,7 +87,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      6 min read
+      8 min read
     
 </span></p>
 
@@ -136,6 +136,7 @@ window.onload = wrap_img;
 <a href="#About">About </a>
 <ul>
 <li class="toc-entry toc-h2"><a href="#What-We-Need">What We Need </a></li>
+<li class="toc-entry toc-h2"><a href="#Part-1:-The-Data">Part 1: The Data </a></li>
 <li class="toc-entry toc-h2"><a href="#Part-2:-The-Model">Part 2: The Model </a></li>
 <li class="toc-entry toc-h2"><a href="#Part-3:-The-Cost-Function">Part 3: The Cost Function </a></li>
 <li class="toc-entry toc-h2">
@@ -210,6 +211,42 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Part-1:-The-Data">
+<a class="anchor" href="#Part-1:-The-Data" aria-hidden="true"><span class="octicon octicon-link"></span></a>Part 1: The Data<a class="anchor-link" href="#Part-1:-The-Data"> </a>
+</h2>
+<p>Your dataset can contain anywhere between a few hundred to few million different datapoints. These datapoints are fed into an Optimization Algorithm multiple times. With each iteration, the Gradient Decent (Optimzation Algorithm), calculates the Output of the model, computes the cost based on that computation and real value (comes from the data itself), and then updates the parameters to minimize the loss.</p>
+<p>For our case here, we will be just using 2 data points. <strong><em>x = [10, 20]</em></strong>, with corresponding <strong><em>y = [105, 205]</em></strong>.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">x_train</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">])</span>
+<span class="n">y_train</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">105</span><span class="p">,</span> <span class="mi">205</span><span class="p">])</span>
+
+<span class="c1"># also some test data</span>
+<span class="n">x_test</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">])</span>
+<span class="n">y_test</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">305</span><span class="p">,</span> <span class="mi">405</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Part-2:-The-Model">
 <a class="anchor" href="#Part-2:-The-Model" aria-hidden="true"><span class="octicon octicon-link"></span></a>Part 2: The Model<a class="anchor-link" href="#Part-2:-The-Model"> </a>
 </h2>
@@ -251,9 +288,9 @@ Once we have these parameters, we use it to predict unseen data, also called as 
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">compute_model_output</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
-    
-    <span class="n">model</span> <span class="o">=</span> <span class="n">w</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">b</span>
-    <span class="k">return</span> <span class="n">model</span>
+    <span class="c1"># print(f"w: {w}, x: {x}, b: {b}")</span>
+    <span class="n">model_output</span> <span class="o">=</span> <span class="n">w</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">b</span>
+    <span class="k">return</span> <span class="n">model_output</span>
 </pre></div>
 
     </div>
@@ -307,6 +344,14 @@ Once we have these parameters, we use it to predict unseen data, also called as 
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>As you can guess, as we have <strong><em>y = [105, 205]</em></strong>. when we're done, we'd like to have <strong><em>w=10, and b=5</em></strong>. Let's see how we can arrive at these values!</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>That's correct! This means our codified model in Python is returning the expected the values. Feel free to try here with your own examples here.</p>
 
 </div>
@@ -321,6 +366,15 @@ Once we have these parameters, we use it to predict unseen data, also called as 
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now, as explained the <a href="https://thepegasos.github.io/blog/2022/07/16/What-is-Machine-Learning.html">blog post</a>, we need a way to measure the performance of our learned model.</p>
+<p>i.e. we need a way to measure if our model is producing realistic values.</p>
+
+</div>
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -328,9 +382,13 @@ Once we have these parameters, we use it to predict unseen data, also called as 
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Now</span><span class="p">,</span> <span class="k">as</span> <span class="n">explained</span> <span class="n">the</span> <span class="p">[</span><span class="n">blog</span> <span class="n">post</span><span class="p">](</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">thepegasos</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">blog</span><span class="o">/</span><span class="mi">2022</span><span class="o">/</span><span class="mi">07</span><span class="o">/</span><span class="mi">16</span><span class="o">/</span><span class="n">What</span><span class="o">-</span><span class="ow">is</span><span class="o">-</span><span class="n">Machine</span><span class="o">-</span><span class="n">Learning</span><span class="o">.</span><span class="n">html</span><span class="p">),</span> <span class="n">we</span> <span class="n">need</span> <span class="n">a</span> <span class="n">way</span> <span class="n">to</span> <span class="n">measure</span> <span class="n">the</span> <span class="n">performance</span> <span class="n">of</span> <span class="n">our</span> <span class="n">learned</span> <span class="n">model</span><span class="o">.</span> 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">compute_cost</span><span class="p">(</span><span class="n">y_pred</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">m</span><span class="p">):</span>
+    <span class="c1"># y_pred = shape:  (1, m), contains the predicted values by the Model</span>
+    <span class="c1"># y = shape: (1, m), contains the ground truth (in our case, 105, 205)</span>
 
-<span class="n">i</span><span class="o">.</span><span class="n">e</span><span class="o">.</span> <span class="n">we</span> <span class="n">need</span> <span class="n">a</span> <span class="n">way</span> <span class="n">to</span> <span class="n">measure</span> <span class="k">if</span> <span class="n">our</span> <span class="n">model</span> <span class="ow">is</span> <span class="n">producing</span> <span class="n">realistic</span> <span class="n">values</span><span class="o">.</span> 
+    <span class="n">cost_per_datapoint</span> <span class="o">=</span> <span class="p">(</span><span class="n">y_pred</span> <span class="o">-</span> <span class="n">y</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="c1"># this variable contains the cost per datapoint</span>
+    <span class="n">total_cost</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">cost_per_datapoint</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">m</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">total_cost</span>
 </pre></div>
 
     </div>
@@ -340,6 +398,160 @@ Once we have these parameters, we use it to predict unseen data, also called as 
 </div>
     
 
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">compute_gradients</span><span class="p">(</span><span class="n">y_pred</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">m</span><span class="p">):</span>
+    <span class="n">diff_per_example</span> <span class="o">=</span> <span class="p">(</span><span class="n">y_pred</span> <span class="o">-</span> <span class="n">y</span><span class="p">)</span><span class="o">/</span><span class="n">m</span>
+    <span class="n">dj_dw</span> <span class="o">=</span> <span class="n">diff_per_example</span><span class="o">*</span><span class="n">x</span>
+    <span class="n">dj_db</span> <span class="o">=</span> <span class="n">diff_per_example</span>
+    <span class="k">return</span> <span class="n">dj_dw</span><span class="p">,</span> <span class="n">dj_db</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">update_parameters</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">dw</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">alpha</span><span class="p">):</span>
+    <span class="n">w</span> <span class="o">=</span> <span class="n">w</span> <span class="o">-</span> <span class="n">alpha</span><span class="o">*</span><span class="nb">sum</span><span class="p">(</span><span class="n">dw</span><span class="p">)</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">b</span> <span class="o">-</span> <span class="n">alpha</span><span class="o">*</span><span class="nb">sum</span><span class="p">(</span><span class="n">db</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">w</span><span class="p">,</span> <span class="n">b</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">gradient_decent</span><span class="p">(</span><span class="n">iterations</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">alpha</span><span class="p">):</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">all_costs</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">iterations</span><span class="p">):</span>
+        
+        <span class="n">model_prediction</span> <span class="o">=</span> <span class="n">compute_model_output</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+        <span class="n">cost</span> <span class="o">=</span> <span class="n">compute_cost</span><span class="p">(</span><span class="n">y_pred</span><span class="o">=</span><span class="n">model_prediction</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">m</span><span class="o">=</span><span class="n">m</span><span class="p">)</span>
+        <span class="n">dw</span><span class="p">,</span><span class="n">db</span> <span class="o">=</span> <span class="n">compute_gradients</span><span class="p">(</span><span class="n">model_prediction</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
+        <span class="n">w</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">update_parameters</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">dw</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">alpha</span><span class="p">)</span>
+        <span class="n">all_costs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cost</span><span class="p">)</span>
+        <span class="n">print_at</span> <span class="o">=</span> <span class="n">iterations</span><span class="o">/</span><span class="mi">10</span>
+        <span class="k">if</span> <span class="n">i</span><span class="o">%</span><span class="k">print_at</span> == 0: # only print 10 progress costs
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Iteration # </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">, cost: </span><span class="si">{</span><span class="n">cost</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">w</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">all_costs</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">w_init</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">b_init</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">iterations</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.0001</span>
+<span class="n">w</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">all_costs</span> <span class="o">=</span> <span class="n">gradient_decent</span><span class="p">(</span><span class="n">iterations</span><span class="p">,</span> <span class="n">w_init</span><span class="p">,</span> <span class="n">x_train</span><span class="p">,</span> <span class="n">b_init</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">alpha</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Iteration # 0, cost: 2.0
+Iteration # 100, cost: 0.2093535825341508
+Iteration # 200, cost: 0.19784645051025793
+Iteration # 300, cost: 0.19738372726634273
+Iteration # 400, cost: 0.19699033884724906
+Iteration # 500, cost: 0.19659815826785115
+Iteration # 600, cost: 0.19620676109658386
+Iteration # 700, cost: 0.19581614315416213
+Iteration # 800, cost: 0.19542630287300639
+Iteration # 900, cost: 0.19503723870480114
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Learned parameters: w: </span><span class="si">{</span><span class="n">w</span><span class="si">}</span><span class="s2">, b: </span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s2">, Expected parameters: w: </span><span class="si">{</span><span class="mi">10</span><span class="si">}</span><span class="s2">, b: </span><span class="si">{</span><span class="mi">5</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Learned parameters: w: 10.118430918661392, b: 3.026938061811292, Expected parameters: w: 10, b: 5
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>And.. <strong>congratulations!</strong>, you have now built the linear regression machine learning model from scratch!!</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
