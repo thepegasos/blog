@@ -4,23 +4,23 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Fastpages Notebook Blog Post | fastpages</title>
+<title>Linear Regression from Scratch | fastpages</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="Fastpages Notebook Blog Post" />
+<meta property="og:title" content="Linear Regression from Scratch" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="A tutorial of fastpages for Jupyter notebooks." />
-<meta property="og:description" content="A tutorial of fastpages for Jupyter notebooks." />
-<link rel="canonical" href="https://thepegasos.github.io/blog/jupyter/2020/02/20/test.html" />
-<meta property="og:url" content="https://thepegasos.github.io/blog/jupyter/2020/02/20/test.html" />
+<meta name="description" content="A tutorial of building and training a linear regression model" />
+<meta property="og:description" content="A tutorial of building and training a linear regression model" />
+<link rel="canonical" href="https://thepegasos.github.io/blog/jupyter/2022/07/22/Linear-Regression-from-Scratch.html" />
+<meta property="og:url" content="https://thepegasos.github.io/blog/jupyter/2022/07/22/Linear-Regression-from-Scratch.html" />
 <meta property="og:site_name" content="fastpages" />
 <meta property="og:image" content="https://thepegasos.github.io/blog/images/chart-preview.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2020-02-20T00:00:00-06:00" />
+<meta property="article:published_time" content="2022-07-22T00:00:00-05:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta property="twitter:image" content="https://thepegasos.github.io/blog/images/chart-preview.png" />
-<meta property="twitter:title" content="Fastpages Notebook Blog Post" />
+<meta property="twitter:title" content="Linear Regression from Scratch" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2020-02-20T00:00:00-06:00","datePublished":"2020-02-20T00:00:00-06:00","description":"A tutorial of fastpages for Jupyter notebooks.","headline":"Fastpages Notebook Blog Post","image":"https://thepegasos.github.io/blog/images/chart-preview.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://thepegasos.github.io/blog/jupyter/2020/02/20/test.html"},"url":"https://thepegasos.github.io/blog/jupyter/2020/02/20/test.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-07-22T00:00:00-05:00","datePublished":"2022-07-22T00:00:00-05:00","description":"A tutorial of building and training a linear regression model","headline":"Linear Regression from Scratch","image":"https://thepegasos.github.io/blog/images/chart-preview.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://thepegasos.github.io/blog/jupyter/2022/07/22/Linear-Regression-from-Scratch.html"},"url":"https://thepegasos.github.io/blog/jupyter/2022/07/22/Linear-Regression-from-Scratch.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://thepegasos.github.io/blog/feed.xml" title="fastpages" /><link rel="shortcut icon" type="image/x-icon" href="/blog/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -79,15 +79,15 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Fastpages Notebook Blog Post</h1>
-<p class="page-description">A tutorial of fastpages for Jupyter notebooks.</p>
-<p class="post-meta post-meta-title"><time class="dt-published" datetime="2020-02-20T00:00:00-06:00" itemprop="datePublished">
-        Feb 20, 2020
+    <h1 class="post-title p-name" itemprop="name headline">Linear Regression from Scratch</h1>
+<p class="page-description">A tutorial of building and training a linear regression model</p>
+<p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-07-22T00:00:00-05:00" itemprop="datePublished">
+        Jul 22, 2022
       </time>
        • <span class="read-time" title="Estimated read time">
     
     
-      5 min read
+      6 min read
     
 </span></p>
 
@@ -105,24 +105,24 @@ window.onload = wrap_img;
         <div class="pb-5 d-flex flex-justify-center">
           <div class="px-2">
 
-    <a href="https://github.com/thepegasos/blog/tree/master/_notebooks/2020-02-20-test.ipynb" role="button" target="_blank">
+    <a href="https://github.com/thepegasos/blog/tree/master/_notebooks/Linear%20Regression%20from%20Scratch.ipynb" role="button" target="_blank">
 <img class="notebook-badge-image" src="/blog/assets/badges/github.svg" alt="View On GitHub">
     </a>
 </div>
 
           <div class="px-2">
-    <a href="https://mybinder.org/v2/gh/thepegasos/blog/master?filepath=_notebooks%2F2020-02-20-test.ipynb" target="_blank">
+    <a href="https://mybinder.org/v2/gh/thepegasos/blog/master?filepath=_notebooks%2FLinear+Regression+from+Scratch.ipynb" target="_blank">
         <img class="notebook-badge-image" src="/blog/assets/badges/binder.svg" alt="Open In Binder">
     </a>
 </div>
 
           <div class="px-2">
-    <a href="https://colab.research.google.com/github/thepegasos/blog/blob/master/_notebooks/2020-02-20-test.ipynb" target="_blank">
+    <a href="https://colab.research.google.com/github/thepegasos/blog/blob/master/_notebooks/Linear%20Regression%20from%20Scratch.ipynb" target="_blank">
         <img class="notebook-badge-image" src="/blog/assets/badges/colab.svg" alt="Open In Colab">
     </a>
 </div>
           <div class="px-2">
-  <a href="https://deepnote.com/launch?url=https%3A%2F%2Fgithub.com%2Fthepegasos%2Fblog%2Fblob%2Fmaster%2F_notebooks%2F2020-02-20-test.ipynb" target="_blank">
+  <a href="https://deepnote.com/launch?url=https%3A%2F%2Fgithub.com%2Fthepegasos%2Fblog%2Fblob%2Fmaster%2F_notebooks%2FLinear+Regression+from+Scratch.ipynb" target="_blank">
       <img class="notebook-badge-image" src="/blog/assets/badges/deepnote.svg" alt="Launch in Deepnote">
   </a>
 </div>
@@ -135,8 +135,9 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h1">
 <a href="#About">About </a>
 <ul>
-<li class="toc-entry toc-h2"><a href="#Front-Matter">Front Matter </a></li>
-<li class="toc-entry toc-h2"><a href="#Markdown-Shortcuts">Markdown Shortcuts </a></li>
+<li class="toc-entry toc-h2"><a href="#What-We-Need">What We Need </a></li>
+<li class="toc-entry toc-h2"><a href="#Part-2:-The-Model">Part 2: The Model </a></li>
+<li class="toc-entry toc-h2"><a href="#Part-3:-The-Cost-Function">Part 3: The Cost Function </a></li>
 <li class="toc-entry toc-h2">
 <a href="#Interactive-Charts-With-Altair">Interactive Charts With Altair </a>
 <ul>
@@ -172,7 +173,7 @@ window.onload = wrap_img;
 #################################################
 ### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
 #################################################
-# file to edit: _notebooks/2020-02-20-test.ipynb
+# file to edit: _notebooks/Linear Regression from Scratch.ipynb
 -->
 
 <div class="container" id="notebook-container">
@@ -183,8 +184,8 @@ window.onload = wrap_img;
 <h1 id="About">
 <a class="anchor" href="#About" aria-hidden="true"><span class="octicon octicon-link"></span></a>About<a class="anchor-link" href="#About"> </a>
 </h1>
-<p>This notebook is a demonstration of some of capabilities of <a href="https://github.com/fastai/fastpages">fastpages</a> with notebooks.</p>
-<p>With <code>fastpages</code> you can save your jupyter notebooks into the <code>_notebooks</code> folder at the root of your repository, and they will be automatically be converted to Jekyll compliant blog posts!</p>
+<p>This notebook is a quick walkthough of how Linear Regression really works. We will not be using any external Machine Learning library (except for <code>numpy</code>, which really is a scientific computing libray than a Machine Learning one).</p>
+<p>Every piece of the algorithm (right from model, to cost function, until gradinent decent) will be built from scratch.</p>
 
 </div>
 </div>
@@ -192,25 +193,16 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Front-Matter">
-<a class="anchor" href="#Front-Matter" aria-hidden="true"><span class="octicon octicon-link"></span></a>Front Matter<a class="anchor-link" href="#Front-Matter"> </a>
+<h2 id="What-We-Need">
+<a class="anchor" href="#What-We-Need" aria-hidden="true"><span class="octicon octicon-link"></span></a>What We Need<a class="anchor-link" href="#What-We-Need"> </a>
 </h2>
-<p>The first cell in your Jupyter Notebook or markdown blog post contains front matter. Front matter is metadata that can turn on/off options in your Notebook. It is formatted like this:</p>
-
-<pre><code># "My Title"
-&gt; "Awesome summary"
-
-- toc:true- branch: master
-- badges: true
-- comments: true
-- author: Hamel Husain &amp; Jeremy Howard
-- categories: [fastpages, jupyter]</code></pre>
-<ul>
-<li>Setting <code>toc: true</code> will automatically generate a table of contents</li>
-<li>Setting <code>badges: true</code> will automatically include GitHub and Google Colab links to your notebook.</li>
-<li>Setting <code>comments: true</code> will enable commenting on your blog post, powered by <a href="https://github.com/utterance/utterances">utterances</a>.</li>
-</ul>
-<p>The title and description need to be enclosed in double quotes only if they include special characters such as a colon. More details and options for front matter can be viewed on the <a href="https://github.com/fastai/fastpages#front-matter-related-options">front matter section</a> of the README.</p>
+<p>From the outset, as explained in the <a href="https://thepegasos.github.io/blog/2022/07/16/What-is-Machine-Learning.html">blog post</a>, we need three important things to build any Machine Learning model</p>
+<ol>
+<li>Data from which We Need to Learn/represent</li>
+<li>Model</li>
+<li>Cost Function </li>
+<li>Optimization Algorithm (we'd be using <b>Gradient Decent</b> here as most production tasks use some or the other variation of this algorithm <b>and</b> as it suits our purpse here)</li>
+</ol>
 
 </div>
 </div>
@@ -218,8 +210,8 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Markdown-Shortcuts">
-<a class="anchor" href="#Markdown-Shortcuts" aria-hidden="true"><span class="octicon octicon-link"></span></a>Markdown Shortcuts<a class="anchor-link" href="#Markdown-Shortcuts"> </a>
+<h2 id="Part-2:-The-Model">
+<a class="anchor" href="#Part-2:-The-Model" aria-hidden="true"><span class="octicon octicon-link"></span></a>Part 2: The Model<a class="anchor-link" href="#Part-2:-The-Model"> </a>
 </h2>
 </div>
 </div>
@@ -227,37 +219,26 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>A <code>#hide</code> comment at the top of any code cell will hide <strong>both the input and output</strong> of that cell in your blog post.</p>
-<p>A <code>#hide_input</code> comment at the top of any code cell will <strong>only hide the input</strong> of that cell.</p>
+<p>Let's now build the function which will represent our model. Since we are doing linear regression, we will be using: <strong><em>y = wx + b</em></strong></p>
+<p>Here <strong><em>w</em></strong> is a weight and <strong><em>b</em></strong> is a bias term – they're generally referred as <em>model parameters</em>.</p>
 
 </div>
 </div>
 </div>
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>The comment #hide_input was used to hide the code that produced this.
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-    
-
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>put a <code>#collapse-hide</code> flag at the top of any cell if you want to <strong>hide</strong> that cell by default, but give the reader the option to show it:</p>
+<p><code>&gt; Important: All in all, all we need is the right parameters that will represent the data well. 
+i.e. Machine Learning is really the process of obtaining the best parameters w and b that fits our data well – also called as training. 
+Once we have these parameters, we use it to predict unseen data, also called as inference. These two steps are all there is to it. We'll be doing both in this tutorial!</code></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now, lets build a function that will help us compute the output <strong><em>y</em></strong>, based on model <strong><em>wx + b</em></strong></p>
 
 </div>
 </div>
@@ -265,22 +246,97 @@ window.onload = wrap_img;
     
     
 <div class="cell border-box-sizing code_cell rendered">
-<details class="description">
-      <summary class="btn btn-sm" data-open="Hide Code" data-close="Show Code"></summary>
-        <p></p>
 <div class="input">
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">altair</span> <span class="k">as</span> <span class="nn">alt</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">compute_model_output</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    
+    <span class="n">model</span> <span class="o">=</span> <span class="n">w</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">b</span>
+    <span class="k">return</span> <span class="n">model</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
-    </details>
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Let's assume that our input <strong><em>x</em></strong> is 2. Our learned parameters are <strong><em>w=10, b=5</em></strong>. Thus our output should be <strong><em>10\</em>2 + 5*</strong>, which is <strong><em>25</em></strong>. Let's verify:</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">compute_model_output</span><span class="p">(</span><span class="n">w</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>25</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>That's correct! This means our codified model in Python is returning the expected the values. Feel free to try here with your own examples here.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Part-3:-The-Cost-Function">
+<a class="anchor" href="#Part-3:-The-Cost-Function" aria-hidden="true"><span class="octicon octicon-link"></span></a>Part 3: The Cost Function<a class="anchor-link" href="#Part-3:-The-Cost-Function"> </a>
+</h2>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Now</span><span class="p">,</span> <span class="k">as</span> <span class="n">explained</span> <span class="n">the</span> <span class="p">[</span><span class="n">blog</span> <span class="n">post</span><span class="p">](</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">thepegasos</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">blog</span><span class="o">/</span><span class="mi">2022</span><span class="o">/</span><span class="mi">07</span><span class="o">/</span><span class="mi">16</span><span class="o">/</span><span class="n">What</span><span class="o">-</span><span class="ow">is</span><span class="o">-</span><span class="n">Machine</span><span class="o">-</span><span class="n">Learning</span><span class="o">.</span><span class="n">html</span><span class="p">),</span> <span class="n">we</span> <span class="n">need</span> <span class="n">a</span> <span class="n">way</span> <span class="n">to</span> <span class="n">measure</span> <span class="n">the</span> <span class="n">performance</span> <span class="n">of</span> <span class="n">our</span> <span class="n">learned</span> <span class="n">model</span><span class="o">.</span> 
+
+<span class="n">i</span><span class="o">.</span><span class="n">e</span><span class="o">.</span> <span class="n">we</span> <span class="n">need</span> <span class="n">a</span> <span class="n">way</span> <span class="n">to</span> <span class="n">measure</span> <span class="k">if</span> <span class="n">our</span> <span class="n">model</span> <span class="ow">is</span> <span class="n">producing</span> <span class="n">realistic</span> <span class="n">values</span><span class="o">.</span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
 </div>
     
 
@@ -981,7 +1037,7 @@ window.onload = wrap_img;
     <svg class="octicon octicon-alert" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z"></path></svg>
     <strong>Warning: </strong>There will be no second warning!
 </div>
-<p>Typing <code>&gt; Important: Pay attention! It's important. asd asdf</code> will render this:
+<p>Typing <code>&gt; Important: Pay attention! It's important.</code> will render this:
 </p>
 <div class="flash flash-warn">
     <svg class="octicon octicon-zap" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M10.561 1.5a.016.016 0 00-.01.004L3.286 8.571A.25.25 0 003.462 9H6.75a.75.75 0 01.694 1.034l-1.713 4.188 6.982-6.793A.25.25 0 0012.538 7H9.25a.75.75 0 01-.683-1.06l2.008-4.418.003-.006a.02.02 0 00-.004-.009.02.02 0 00-.006-.006L10.56 1.5zM9.504.43a1.516 1.516 0 012.437 1.713L10.415 5.5h2.123c1.57 0 2.346 1.909 1.22 3.004l-7.34 7.142a1.25 1.25 0 01-.871.354h-.302a1.25 1.25 0 01-1.157-1.723L5.633 10.5H3.462c-1.57 0-2.346-1.909-1.22-3.004L9.503.429z"></path></svg>
@@ -1037,7 +1093,7 @@ And another {% fn 2 %}
   </div>
 <!-- from https://github.com/utterance/utterances -->
 <script src="https://utteranc.es/client.js" repo="thepegasos/blog" issue-term="title" label="blogpost-comment" theme="github-light" crossorigin="anonymous" async>
-</script><a class="u-url" href="/blog/jupyter/2020/02/20/test.html" hidden></a>
+</script><a class="u-url" href="/blog/jupyter/2022/07/22/Linear-Regression-from-Scratch.html" hidden></a>
 </article>
 
       </div>
