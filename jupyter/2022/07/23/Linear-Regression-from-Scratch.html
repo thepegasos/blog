@@ -132,6 +132,7 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h2"><a href="#Part-1:-The-Data">Part 1: The Data </a></li>
 <li class="toc-entry toc-h2"><a href="#Part-2:-The-Model">Part 2: The Model </a></li>
 <li class="toc-entry toc-h2"><a href="#Part-3:-The-Cost-Function">Part 3: The Cost Function </a></li>
+<li class="toc-entry toc-h2"><a href="#Part-4:-The-Optimization-Algorithm">Part 4: The Optimization Algorithm </a></li>
 </ul>
 </li>
 </ul><!--
@@ -362,6 +363,45 @@ Once we have these parameters, we use it to predict unseen data, also called as 
 </div>
     
 
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Part-4:-The-Optimization-Algorithm">
+<a class="anchor" href="#Part-4:-The-Optimization-Algorithm" aria-hidden="true"><span class="octicon octicon-link"></span></a>Part 4: The Optimization Algorithm<a class="anchor-link" href="#Part-4:-The-Optimization-Algorithm"> </a>
+</h2>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">gradient_decent</span><span class="p">(</span><span class="n">iterations</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">alpha</span><span class="p">):</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">all_costs</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">iterations</span><span class="p">):</span>
+        
+        <span class="n">model_prediction</span> <span class="o">=</span> <span class="n">compute_model_output</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+        <span class="n">cost</span> <span class="o">=</span> <span class="n">compute_cost</span><span class="p">(</span><span class="n">y_pred</span><span class="o">=</span><span class="n">model_prediction</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">m</span><span class="o">=</span><span class="n">m</span><span class="p">)</span>
+        <span class="n">dw</span><span class="p">,</span><span class="n">db</span> <span class="o">=</span> <span class="n">compute_gradients</span><span class="p">(</span><span class="n">model_prediction</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
+        <span class="n">w</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">update_parameters</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">dw</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">alpha</span><span class="p">)</span>
+        <span class="n">all_costs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cost</span><span class="p">)</span>
+        <span class="n">print_at</span> <span class="o">=</span> <span class="n">iterations</span><span class="o">/</span><span class="mi">10</span>
+        <span class="k">if</span> <span class="n">i</span><span class="o">%</span><span class="k">print_at</span> == 0: # only print 10 progress costs
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Iteration # </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">, cost: </span><span class="si">{</span><span class="n">cost</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">w</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">all_costs</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -403,36 +443,14 @@ Once we have these parameters, we use it to predict unseen data, also called as 
 </div>
     
 
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
+<div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">gradient_decent</span><span class="p">(</span><span class="n">iterations</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">alpha</span><span class="p">):</span>
-    <span class="n">m</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-    <span class="n">all_costs</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">iterations</span><span class="p">):</span>
-        
-        <span class="n">model_prediction</span> <span class="o">=</span> <span class="n">compute_model_output</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
-        <span class="n">cost</span> <span class="o">=</span> <span class="n">compute_cost</span><span class="p">(</span><span class="n">y_pred</span><span class="o">=</span><span class="n">model_prediction</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">m</span><span class="o">=</span><span class="n">m</span><span class="p">)</span>
-        <span class="n">dw</span><span class="p">,</span><span class="n">db</span> <span class="o">=</span> <span class="n">compute_gradients</span><span class="p">(</span><span class="n">model_prediction</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
-        <span class="n">w</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">update_parameters</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">dw</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">alpha</span><span class="p">)</span>
-        <span class="n">all_costs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cost</span><span class="p">)</span>
-        <span class="n">print_at</span> <span class="o">=</span> <span class="n">iterations</span><span class="o">/</span><span class="mi">10</span>
-        <span class="k">if</span> <span class="n">i</span><span class="o">%</span><span class="k">print_at</span> == 0: # only print 10 progress costs
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Iteration # </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">, cost: </span><span class="si">{</span><span class="n">cost</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">w</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">all_costs</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now that we have all the componenets, let's train our model using our data!</p>
 
 </div>
-    
-
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
