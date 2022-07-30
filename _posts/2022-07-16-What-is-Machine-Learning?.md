@@ -50,7 +50,7 @@ Concretely, we can draw 3 important things that we need in our toolset to teach 
 3. An Optimization Algorithm to minimize the Cost 
 4. Metrics to decide if the algorithm performs well on unseen data (e.g. accuracy, loss, etc.)
 
-{% include alert.html text "NOTE: Sometimes metric and Cost Function can be same. BUT Metrics are mostly understandable by humans while Cost Functions are for optimizing algorithms" %}
+{% include alert.html text="Sometimes metric and Cost Function can be same. BUT Metrics are mostly understandable by humans while Cost Functions are for optimizing algorithms" %}
 
 Let's look at how you would go on implementing each of these steps in Python code in the next post!
 
