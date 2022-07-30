@@ -29,7 +29,7 @@ From the outset, you will need:
 2. Then , we need a way to measure it's (model's) *performance* – how well your model has learnt the task that you are trying to teach. We call this
   a **Cost Function**
 3. Once you have prediction and a way to measure it's performance, you need a way to optimize your model's performance based on it's Cost.
-  We call this an **Optimization Algorithm**. This is the most crucial part, running optimization algorithm with Model predictions with Cost Function is so called **Training**. 
+  We call this an **Optimization Algorithm**. This is the most crucial part, running optimization algorithm with Model predictions and Cost Function calculations is so called **Training**. 
 
 
 ## Analogy
