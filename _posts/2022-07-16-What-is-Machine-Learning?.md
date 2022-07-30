@@ -58,6 +58,8 @@ Concretely, we can draw 3 important things that we need in our toolset to teach 
 {% include alert.html text="Sometimes metric and Cost Function can be same. BUT Metrics are mostly understandable by humans while Cost Functions are for optimizing algorithms" %}
 
 Let's look at how you would go on implementing each of these steps in Python code in the next post!
-
+  
+    
+    
 Om Shanti,  
 Indra.
