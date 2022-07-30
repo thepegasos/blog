@@ -1,3 +1,11 @@
+---
+toc: true
+layout: post
+description: A minimal example of using markdown with fastpages.
+categories: [markdown]
+title: An Example Markdown Post
+---
+
 # What is Machine Learning? 
 
 Before we get into individual algorithms, it's important to know and understand high level Machine Learning Algorithm implementation flow. 
