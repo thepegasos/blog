@@ -4,7 +4,9 @@ title: About Me
 permalink: /about/
 ---
 
-Industry expert with expertise in Python, Ansible, and Red Hat Linux. 
+- Industry expert with 8 years of experience, looking forward to the decades to come.
 
-Python Frameworks: Django, PyTorch, Pandas, Requests, TensorFlow. 
+- Expertise in Python, Ansible, and Red Hat Linux. 
+
+- Python Frameworks: Django, PyTorch, Pandas, Requests, TensorFlow. 
 
