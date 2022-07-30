@@ -1,7 +1,7 @@
 ---
 toc: true
 layout: post
-description: What is Machine Learning?
+description: Machine Learning and it's Core Componentes – No Code!
 categories: [markdown]
 title: What is Machine Learning?
 ---
@@ -60,6 +60,6 @@ Concretely, we can draw 3 important things that we need in our toolset to teach 
 Let's look at how you would go on implementing each of these steps in Python code in the next post!
   
     
-    
+
 Om Shanti,  
 Indra.
