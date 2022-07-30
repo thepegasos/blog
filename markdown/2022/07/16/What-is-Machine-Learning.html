@@ -4,21 +4,21 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>An Example Markdown Post | fastpages</title>
+<title>Machine Learning in Layman’s Terms | fastpages</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="An Example Markdown Post" />
+<meta property="og:title" content="Machine Learning in Layman’s Terms" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="A minimal example of using markdown with fastpages." />
-<meta property="og:description" content="A minimal example of using markdown with fastpages." />
+<meta name="description" content="What is Machine Learning?" />
+<meta property="og:description" content="What is Machine Learning?" />
 <link rel="canonical" href="https://thepegasos.github.io/blog/markdown/2022/07/16/What-is-Machine-Learning.html" />
 <meta property="og:url" content="https://thepegasos.github.io/blog/markdown/2022/07/16/What-is-Machine-Learning.html" />
 <meta property="og:site_name" content="fastpages" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2022-07-16T00:00:00-05:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="An Example Markdown Post" />
+<meta property="twitter:title" content="Machine Learning in Layman’s Terms" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-07-16T00:00:00-05:00","datePublished":"2022-07-16T00:00:00-05:00","description":"A minimal example of using markdown with fastpages.","headline":"An Example Markdown Post","mainEntityOfPage":{"@type":"WebPage","@id":"https://thepegasos.github.io/blog/markdown/2022/07/16/What-is-Machine-Learning.html"},"url":"https://thepegasos.github.io/blog/markdown/2022/07/16/What-is-Machine-Learning.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-07-16T00:00:00-05:00","datePublished":"2022-07-16T00:00:00-05:00","description":"What is Machine Learning?","headline":"Machine Learning in Layman’s Terms","mainEntityOfPage":{"@type":"WebPage","@id":"https://thepegasos.github.io/blog/markdown/2022/07/16/What-is-Machine-Learning.html"},"url":"https://thepegasos.github.io/blog/markdown/2022/07/16/What-is-Machine-Learning.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://thepegasos.github.io/blog/feed.xml" title="fastpages" /><link rel="shortcut icon" type="image/x-icon" href="/blog/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -89,13 +89,13 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">An Example Markdown Post</h1><p class="page-description">A minimal example of using markdown with fastpages.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-07-16T00:00:00-05:00" itemprop="datePublished">
+    <h1 class="post-title p-name" itemprop="name headline">Machine Learning in Layman&#39;s Terms</h1><p class="page-description">What is Machine Learning?</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-07-16T00:00:00-05:00" itemprop="datePublished">
         Jul 16, 2022
       </time>
        • <span class="read-time" title="Estimated read time">
     
     
-      2 min read
+      3 min read
     
 </span></p>
 
@@ -112,55 +112,76 @@ window.onload = wrap_img;
 
   <div class="post-content e-content" itemprop="articleBody">
     <ul id="toc" class="section-nav">
-<li class="toc-entry toc-h1"><a href="#what-is-machine-learning">What is Machine Learning?</a></li>
+<li class="toc-entry toc-h1"><a href="#what-is-machine-learning">What is Machine Learning?</a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#analogy">Analogy</a></li>
+<li class="toc-entry toc-h2"><a href="#core-components">Core Components</a></li>
+</ul>
+</li>
 </ul><h1 id="what-is-machine-learning">
 <a class="anchor" href="#what-is-machine-learning" aria-hidden="true"><span class="octicon octicon-link"></span></a>What is Machine Learning?</h1>
 
-<p>Before we get into individual algorithms, it’s important to know and understand high level Machine Learning Algorithm implementation flow.</p>
+<p>Machine Learning is the process of teaching a computer from your data. The outcome of task and data at hand decides what and how we want to teach. There are different algorithms of Machine Learning, viz. <strong>Linear Regression, Decision Trees, Neural Networks</strong>, etc. Before we get into individual algorithms, it’s important to know and understand at a high level how Machine Learning Algorithms work.</p>
 
-<p>What does it mean by implementing a Machine Learning algorithm? What are it’s components? What broad steps are there? We will try to answer these here.</p>
+<p>What does it mean by implementing a Machine Learning algorithm? What are it’s core components, if any? What broad steps are there? We will try to answer these here.</p>
 
-<p>A Machine Learning algorithm revolves around “something” to be learnt from given data. “Something” could be a classification task – classify dog vs 
+<p>A Machine Learning algorithm revolves around “something” to be learnt from given data. “Something” could be a <em>classification</em> task – classify dog vs 
 cat image from a pool of cats and dogs images or it could be a problem of predicting a continuous value (e.g. house price, stock price, etc.) 
-– this is also called as Regression. Don’t worry if you never heard this word before (I did not know what it really <em>meant</em> either, 
-even after looking into a dictionary – as you might have guessed, English is not my first language :) 
+– this is also called as Regression. Don’t worry if you never heard word <em>regression</em> before (I did not know what it really <em>meant</em> either, 
+even after looking into a dictionary, I could not relate to it intuitively. As you might have guessed, English is not my first language :) )
 Having spent some time on finding it’s <em>true</em> meaning, just trust me when I say, <em>don’t worry about it, you don’t need to know it</em>.</p>
 
 <p>Now, coming to the task at hand. We want to teach our algorithm a task. Think over it, if you want to teach someone something, how would you do it? 
-What tools, measures/metrics would you fomulate? <i> Think </i> about your approach for a bit before moving to next part.</p>
+What tools, measures/metrics would you fomulate? <em>Think</em> about your approach for a bit before moving to next part.</p>
 
 <p>From the outset, you will need:</p>
-<ol> 
-<li> A hypothesis/assumption that the algorithm has learnt. A way to predict – to compute what your algorithm "thinks" about the input. 
-  This will be our instrument to get the response when we provide with raw data. Standard term for this is <b> Model </b> </li> 
-<li> A way to measure it's (model's) performance – how well your algorithm has learnt the task that you are trying to teach. We call this
-  a <b> Cost Function </b> </li>
-<li> Once you have prediction and a way to measure it's performance, you need a way to optimize your model's performance based on it's Cost.
-  We call this an <b> Optimization Algorithm </b> </li> 
+<ol>
+  <li>A way to predict – to compute what your algorithm “thinks” about the input. This will be our instrument to get the response when we provide with raw data. Standard term for this is <strong>Model</strong>. This can also be thought as a hypothesis/assumption that the our process has learnt.</li>
+  <li>Then , we need a way to measure it’s (model’s) <em>performance</em> – how well your model has learnt the task that you are trying to teach. We call this
+  a <strong>Cost Function</strong>
+</li>
+  <li>Once you have prediction and a way to measure it’s performance, you need a way to optimize your model’s performance based on it’s Cost.
+  We call this an <strong>Optimization Algorithm</strong>. This is the most crucial part, running optimization algorithm with Model predictions with Cost Function is so called <strong>Training</strong>.</li>
 </ol>
 
-<p>Thus broadly, you can draw an anology of teaching something to your younger self or a toddler, like:</p>
+<h2 id="analogy">
+<a class="anchor" href="#analogy" aria-hidden="true"><span class="octicon octicon-link"></span></a>Analogy</h2>
+<p>Broadly, you can draw an anology of teaching something to your younger self or a toddler, like:</p>
 
-<p>If we want to teach them something, we would not just read it load once and assume that they understood everything. Interestingly, same 
-  goes with machines/computers. We need to tell them once (<i>train for one epoch</i>), ask some questions (<i>validate on unseen data</i>), 
-  see how well it understood (<i>calculate cost</i>) and continue this until it understands per our standards 
-  (<i>repeat until convergence</i>). Once their performance is satisfactory during teaching along with quiz scores, we give then an un-assited exam (<i>run our 
-  algorithm against test data</i> ). The score of that exam decides how well the toddler learnt and if it can generalize well.</p>
-
-<p>Concretely, we can draw 3 important things that we need in our toolset to teach machine a given task:</p>
-<ol> 
-<li> A Model </li> 
-<li> A Cost Function </li> 
-<li> An Optimization Algorithm to minimize the Cost </li> 
-<li> Metrics to decide if the algorithm performs well on unseen data (e.g. accuracy, loss, etc.) </li>
-  <br>
-<i> NOTE: Sometimes your metrics and Cost Function can be same. BUT Metrics are mostly understandable by humans while Cost Functions
-  are for optimizing algorithms. </i> 
+<p>If we want to teach them something, we would not just read it out load once and assume that they understood everything. Interestingly, same 
+goes with machines/computers.</p>
+<ol>
+  <li>We need to tell it once (<em>train for one epoch</em>),</li>
+  <li>Ask some questions, see how well it understood by asking them to take quizzes (<em>measure performance (calculate cost) on trained data</em>)</li>
+  <li>And continue this process until it understands per our standards (<em>repeat</em> <strong>training</strong> <em>until convergence</em>).</li>
 </ol>
+
+<div class="Toast">
+   <span class="Toast-icon"><svg class="octicon octicon-info" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg></span>
+   <span class="Toast-content">Note that in above anology, in the first step, we did not have to come up with so called *model* for the kid. The brain of the kid itslef is a model in this scenario.</span>
+</div>
+
+<p>Once their performance is satisfactory during teaching along with quiz scores, we give then an unseen questions in the form of an exam (<strong>run our 
+algorithm against test data</strong>). The score of that exam decides how well the toddler learnt and if it can generalize well. Same goes for our model, based on the <em>TestScore</em>, we decide if this meets the standars for deploying in prodcution.</p>
+
+<h2 id="core-components">
+<a class="anchor" href="#core-components" aria-hidden="true"><span class="octicon octicon-link"></span></a>Core Components</h2>
+<p>Concretely, we can draw 3 important things that we need in our toolset to teach machine a given task: 1</p>
+<ol>
+  <li>A Model</li>
+  <li>A Cost Function</li>
+  <li>An Optimization Algorithm to minimize the Cost</li>
+  <li>Metrics to decide if the algorithm performs well on unseen data (e.g. accuracy, loss, etc.)</li>
+</ol>
+
+<div class="Toast Toast--warning googoo">
+   <span class="Toast-icon"><svg class="octicon octicon-alert" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z"></path></svg></span>
+   <span class="Toast-content">Sometimes metric and Cost Function can be same. BUT Metrics are mostly understandable by humans while Cost Functions are for optimizing algorithms</span>
+</div>
 
 <p>Let’s look at how you would go on implementing each of these steps in Python code in the next post!</p>
 
-<p>Om Shanti, <br>
+<p>Om Shanti
 Indra.</p>
 
   </div><a class="u-url" href="/blog/markdown/2022/07/16/What-is-Machine-Learning.html" hidden></a>
