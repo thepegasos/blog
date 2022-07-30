@@ -1,9 +1,9 @@
 ---
 toc: true
 layout: post
-description: A minimal example of using markdown with fastpages.
+description: What is Machine Learning?
 categories: [markdown]
-title: An Example Markdown Post
+title: Machine Learning in Layman's Terms
 ---
 
 # What is Machine Learning? 
