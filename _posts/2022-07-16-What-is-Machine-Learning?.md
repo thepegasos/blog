@@ -3,10 +3,13 @@ toc: true
 layout: post
 description: What is Machine Learning?
 categories: [markdown]
-title: Machine Learning in Layman's Terms
+title: What is Machine Learning?
 ---
 
 # What is Machine Learning? 
+
+![]({{ site.baseurl }}/images/Blog1/blog1_1.png "Teach Computers based on Your Data")
+
 
 Machine Learning is the process of teaching a computer from your data. The outcome of task and data at hand decides what and how we want to teach. There are different algorithms of Machine Learning, viz. **Linear Regression, Decision Trees, Neural Networks**, etc. Before we get into individual algorithms, it's important to know and understand at a high level how Machine Learning Algorithms work. 
 
@@ -41,7 +44,9 @@ goes with machines/computers.
 {% include info.html text="Note that in above anology, in the first step, we did not have to come up with so called *model* for the kid. The brain of the kid itslef is a model in this scenario." %}
 
 Once their performance is satisfactory during teaching along with quiz scores, we give then an unseen questions in the form of an exam (**run our 
-algorithm against test data**). The score of that exam decides how well the toddler learnt and if it can generalize well. Same goes for our model, based on the *TestScore*, we decide if this meets the standars for deploying in prodcution. 
+algorithm against test data**). The score of that exam decides how well the toddler learnt and if it can generalize well. Same goes for our model, based on the *TestScore*, we decide if this meets the standars for deploying it in prodcution. 
+
+![]({{ site.baseurl }}/images/Blog1/blog1_2.png "Our Brain is/has the most Powerful Models in the World!")
 
 ## Core Components
 Concretely, we can draw 3 important things that we need in our toolset to teach machine a given task: 1
@@ -54,5 +59,5 @@ Concretely, we can draw 3 important things that we need in our toolset to teach 
 
 Let's look at how you would go on implementing each of these steps in Python code in the next post!
 
-Om Shanti
+Om Shanti,  
 Indra.
