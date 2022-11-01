@@ -4,9 +4,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>About | Indramatics Blog</title>
+<title>Kaggle Titanic with Linear Regression and Neural Network | Indramatics Blog</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="About" />
+<meta property="og:title" content="Kaggle Titanic with Linear Regression and Neural Network" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Sharing my knowledge one blog at a time." />
 <meta property="og:description" content="Sharing my knowledge one blog at a time." />
@@ -16,9 +16,9 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2022-11-01T00:00:00-05:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="About" />
+<meta property="twitter:title" content="Kaggle Titanic with Linear Regression and Neural Network" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-11-01T00:00:00-05:00","datePublished":"2022-11-01T00:00:00-05:00","description":"Sharing my knowledge one blog at a time.","headline":"About","mainEntityOfPage":{"@type":"WebPage","@id":"https://thepegasos.github.io/blog/2022/11/01/FastAI-Lesson3-Titanic-Python.html"},"url":"https://thepegasos.github.io/blog/2022/11/01/FastAI-Lesson3-Titanic-Python.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-11-01T00:00:00-05:00","datePublished":"2022-11-01T00:00:00-05:00","description":"Sharing my knowledge one blog at a time.","headline":"Kaggle Titanic with Linear Regression and Neural Network","mainEntityOfPage":{"@type":"WebPage","@id":"https://thepegasos.github.io/blog/2022/11/01/FastAI-Lesson3-Titanic-Python.html"},"url":"https://thepegasos.github.io/blog/2022/11/01/FastAI-Lesson3-Titanic-Python.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://thepegasos.github.io/blog/feed.xml" title="Indramatics Blog" /><link rel="shortcut icon" type="image/x-icon" href="/blog/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -89,13 +89,13 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">About</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-11-01T00:00:00-05:00" itemprop="datePublished">
+    <h1 class="post-title p-name" itemprop="name headline">Kaggle Titanic with Linear Regression and Neural Network</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-11-01T00:00:00-05:00" itemprop="datePublished">
         Nov 1, 2022
       </time>
        • <span class="read-time" title="Estimated read time">
     
     
-      5 min read
+      6 min read
     
 </span></p>
 
@@ -141,6 +141,26 @@ window.onload = wrap_img;
 
 <div class="container" id="notebook-container">
         
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="About">About<a class="anchor-link" href="#About"> </a></h1><p>This notebook and efforts behind this are heavily inspired by Prof. Jeremy Howard and FastAI commnunity!</p>
+<p>In lesson 3 of the course, Prof. Howard takes us on a ride where he explains Machine Learning in very simple and 
+intuitive way. The theme of the lesson (unlike other) is no-code. We understand linear regression and Neural Nets
+from scratch by simple operations in Microsoft Excel.</p>
+<p>To understand thoroughly, I tried my hand at replicating what Jeremy did in the lecture – in excel. As I tried to implement, I realized that Python is way more intuitive for me and I will learn more if I do this in Python than excel. I am not much fimiliar with Excel and doing it Python seemed like a good learning exercise.</p>
+<p>I had to figure out a few things along the way. Getting dimensions of the metrices right and handling numpy arrays was a pain but worth the try. Ultimately, I believe I have implemented Lesson 3 excel file of Kaggle Titanic dataset here in Python.</p>
+<p>A quick note about structure:</p>
+<ul>
+<li>This notebook is a walkthrough and written with an intent to have every functionality that Jeremy has introduced in Lesson 3. </li>
+<li>I did not want to take help of any Machine Learning library so we build everything from scrach. Only Pandas and Numpy are used here. </li>
+<li>Even for solver, we build Gradient Decent from scrach and import it here. </li>
+<li>Feel free to look at <code>solver.py</code> in the repository. It has linear regression and deep learning versions of Gradient Decent algorithms. </li>
+</ul>
+<p><em>Note</em>: We implement this with Matrix multiplication logic which Jeremy explained in the latter part of the lecture.</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Step1:-Let's-improt-libraries-&#8211;&#160;pandas-and-numpy-and-have-our-solvers-ready.">Step1: Let's improt libraries &#8211;&#160;pandas and numpy and have our solvers ready.<a class="anchor-link" href="#Step1:-Let's-improt-libraries-&#8211;&#160;pandas-and-numpy-and-have-our-solvers-ready."> </a></h3>
